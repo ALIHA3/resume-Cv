@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aliha Rafaqat - Resume</title>
+  <style>
+    :root{
+      --bg:#0d1b2a;
+      --panel:#1b263b;
+      --ink:#e0e1dd;
+      --link:#00aaff;
+      --accent:#ffdd57;
+      --panelBorder:#23324d;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      display:flex;
+      flex-direction:column;
+    }
+
+    header{
+      text-align:center;
+      padding:24px 16px 16px;
+      background:var(--panel);
+      border-bottom:1px solid var(--panelBorder);
+    }
+    header h1{margin:0 0 6px;color:var(--accent)}
+    header a{color:var(--link);text-decoration:none}
+    header a:hover{color:var(--accent)}
+
+    /* TOP VERTICAL NAV */
+    nav.top-nav{
+      width:100%;
+      display:flex;
+      justify-content:center;
+      padding:14px 0 18px;
+      background:rgba(15,34,53,.6);
+      backdrop-filter:saturate(120%) blur(2px);
+      border-bottom:1px solid var(--panelBorder);
+    }
+    .menu{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+      width:min(92vw, 460px);
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    .menu a{
+      width:100%;
+      display:block;
+      text-align:center;
+      padding:12px 16px;
+      border-radius:12px;
+      background:var(--panel);
+      color:var(--link);
+      font-weight:700;
+      text-decoration:none;
+      border:1px solid var(--panelBorder);
+      transition:transform .15s ease, background .2s, color .2s, border-color .2s;
+      cursor:pointer;
+      user-select:none;
+    }
+    .menu a:hover{background:var(--bg); color:var(--accent); transform:translateY(-1px)}
+    .menu a.active-link{border-color:var(--accent); color:var(--accent);}
+
+    .content{
+      flex:1;
+      padding:28px 18px 40px;
+      display:flex;
+      justify-content:center;
+    }
+    .container{
+      width:min(92vw, 880px);
+    }
+    section{
+      display:none;
+      background:linear-gradient(180deg, rgba(27,38,59,.55), rgba(27,38,59,.25));
+      border:1px solid var(--panelBorder);
+      border-radius:18px;
+      padding:22px 18px;
+      animation:fadeIn .35s ease both;
+    }
+    section.active{display:block}
+    h2{margin:0 0 12px}
+    ul.skill-list{
+      margin:10px auto 0;
+      padding-left:18px;
+      max-width:640px;
+    }
+    @keyframes fadeIn{from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:translateY(0)}}
+
+    footer{
+      text-align:center;
+      padding:14px;
+      background:var(--panel);
+      border-top:1px solid var(--panelBorder);
+      font-size:.95rem;
+    }
+
+    /* Button */
+    .download-btn{
+      display:inline-block;
+      margin-top:12px;
+      padding:10px 18px;
+      background:var(--link);
+      color:#fff;
+      text-decoration:none;
+      border-radius:8px;
+      font-weight:bold;
+      transition:background .3s;
+    }
+    .download-btn:hover{background:var(--accent); color:#000;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aliha Rafaqat</h1>
+    <p>Email: <a href="mailto:rafaqataliha12@gmail.com">rafaqataliha12@gmail.com</a></p>
+  </header>
+
+  <!-- TOP VERTICAL MENU -->
+  <nav class="top-nav">
+    <ul class="menu">
+      <li><a class="active-link" data-target="profile" onclick="showSection('profile')">Profile Summary</a></li>
+      <li><a data-target="skills" onclick="showSection('skills')">Skills</a></li>
+      <li><a data-target="experience" onclick="showSection('experience')">Experience</a></li>
+      <li><a data-target="projects" onclick="showSection('projects')">Projects</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="content">
+    <div class="container">
+      <section id="profile" class="active">
+        <h2>Profile Summary</h2>
+        <p>
+          Creative and detail-oriented <b>Content Writer</b> with experience in academic writing, blog posts, and essays.
+          Skilled at researching, structuring ideas, and creating engaging content tailored to audience needs.
+        </p>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul class="skill-list">
+          <li>Academic &amp; Essay Writing</li>
+          <li>Blog &amp; Article Writing</li>
+          <li>Creative Storytelling</li>
+          <li>Editing &amp; Proofreading</li>
+          <li>Research &amp; Analysis</li>
+          <li>SEO Basics</li>
+          <li>Time Management</li>
+        </ul>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <p><b>Freelance Content Writer</b></p>
+        <ul class="skill-list">
+          <li>Wrote academic assignments, essays, and research-based content for clients.</li>
+          <li>Created engaging blogs on global issues, culture, and education.</li>
+          <li>Delivered high-quality content within deadlines, maintaining originality and clarity.</li>
+        </ul>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <p>
+          📌 This is my ongoing project and research on <b>Human Rights violation in Kashmir</b>.  
+          I can do thesis writing and assignment writing — and make it perfect!
+        </p>
+        <p><b>Attached File:</b> <i>kashmir.docx</i></p>
+        <!-- Download link -->
+        <a href="kashmir.docx" download class="download-btn">⬇ Download Project File</a>
+      </section>
+    </div>
+  </main>
+
+  <footer>© 2025 Aliha Rafaqat — Resume</footer>
+
+  <script>
+    function showSection(id){
+      document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+
+      document.querySelectorAll(".menu a").forEach(a => a.classList.remove("active-link"));
+      const active = document.querySelector(`.menu a[data-target="${id}"]`);
+      if(active) active.classList.add("active-link");
+    }
+  </script>
+</body>
+</html>
